@@ -61,12 +61,12 @@ extension PokemonViewController : UITableViewDataSource, UITableViewDelegate {
 //            print(pokemon.name)
             selectedPokemon = pokemon
             
-            performSegue(withIdentifier: "sendPokemon", sender: self)
+            performSegue(withIdentifier: "sendPokemonMS", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sendPokemon" {
+        if segue.identifier == "sendPokemonMS" {
             let objDestination = segue.destination as! DetailPokemonViewController
             
             if let selectedPokemon = selectedPokemon {
