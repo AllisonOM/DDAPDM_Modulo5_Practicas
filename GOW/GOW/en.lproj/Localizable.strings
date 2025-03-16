@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  GOW
+
+  Created by Allison on 15/03/25.
+  
+*/
+
+/* MENU*/
+"menu.option.videogames" = "Video game";
+"menu.option.weapons" = "Weapons";
+"menu.option.characters" = "Characters";
+"menu.option.merchandise" = "Merchandise";
+
+/* WEAPONS */
+"weapon.name.boomshot" = "Boomshot Grenade Launcher";
+"weapon.description.boomshot" = "It was a single-shot pump grenade launcher primarily designed and used by Locust, particularly by the Boomer.";
+"weapon.name.hammerburstii" = "Hammerburst II";
+"weapon.description.hammerburstii" = "It was the standard high-powered Locust assault rifle. It is often referred to as the Locust counterpart of the COG Lancer assault rifle.";
+"weapon.name.mulcher" = "Mulcher";
+"weapon.description.mulcher" = "The Mulcher is a heavy, crank-operated Gatling gun developed by the Coalition of Ordered Governments.";
+"weapon.name.bolo_grenade" = "Bolo Grenade";
+"weapon.description.bolo_grenade" = "The Bolo Grenade, also known as the Fragmentation Grenade, was the standard fragmentation grenade used by the Coalition of Ordered Governments, the Locust Horde, and the Swarm.";
+"weapon.name.boltok" = "Boltok Pistol";
+"weapon.description.boltok" = "It was the standard weapon of the Locust, particularly the Drones. The pistol follows the Locust weapon design philosophy of creating weapons with an emphasis on brute force.";
+"weapon.name.lancer" = "Lancer Assault Rifle Mark 1";
+"weapon.description.lancer" = "Nicknamed Retro Lancer during the Lambent Pandemic, it was the predecessor to the Lancer Assault Rifle Mark 2. Previously the primary assault rifle of the Coalition of Ordered Governments army, the Mark 1 was used during the Pendulum Wars.";
+"weapon.name.lancer2" = "Lancer Assault Rifle Mark 2";
+"weapon.description.lancer2" = "An upgrade to the Lancer Assault Rifle Mark 1, produced with a chainsaw bayonet, greater accuracy, less recoil, and higher ammo capacity, but with less firepower compared to its predecessor.";
+"weapon.name.sniper" = "Longshot Sniper Rifle";
+"weapon.description.sniper" = "It was a single-shot, large-caliber sniper rifle. Created by the Coalition of Ordered Governments during the Pendulum Wars, the Longshot was also used seventeen years after Emergence Day.";
+"weapon.name.hammer_of_dawn" = "Hammer of Dawn";
+"weapon.description.hammer_of_dawn" = "The Hammer of Dawn was an orbital laser, satellite-based, powered by COG Imulsion. Its key components were invented by UIR scientist Mauris Ivo and completed by Professor Adam Fenix after it was stolen during Operation: Leveler.";
+"weapon.name.mx8" = "MX8 Snub Pistol";
+"weapon.description.mx8" = "It was the standard sidearm for the Coalition of Ordered Governments military personnel";
+

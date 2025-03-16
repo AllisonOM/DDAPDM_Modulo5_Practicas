@@ -1,10 +1,3 @@
-//
-//  PokemonViewController.swift
-//  MyPokemonApp
-//
-//  Created by Allison on 07/03/25.
-//
-
 import UIKit
 
 class PokemonViewController: UIViewController {
@@ -48,19 +41,52 @@ extension PokemonViewController : UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Pokemones"
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//            return UIImageView(image: UIImage(named: "PokemonHeader"))
+//    }
     
+    // Reemplaza este método para aplicar el efecto de desenfoque
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIImageView(image: UIImage(named: "PokemonHeader"))
+
+        // Crea un contenedor para el encabezado
+        let containerView = UIView()
+
+        // Crea una imagen de fondo
+        let imgHeader = UIImageView(image: UIImage(named: "PokemonHeader"))
+        imgHeader.translatesAutoresizingMaskIntoConstraints = false
+
+        // Crea una vista para el efecto de desenfoque
+        let bgView = UIVisualEffectView()
+        bgView.translatesAutoresizingMaskIntoConstraints = false
+
+        // Crea el efecto de desenfoque
+        let blurEffect = UIBlurEffect(style: .light)
+        bgView.effect = blurEffect
+
+        // Agrega las sub-vistas
+        containerView.addSubview(bgView)
+        containerView.addSubview(imgHeader)
+
+        // Configura las restricciones
+        containerView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        imgHeader.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        imgHeader.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        imgHeader.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
+
+        // Configura las restricciones para el efecto de desenfoque
+        NSLayoutConstraint.activate([
+            bgView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            bgView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            bgView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            bgView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
+        
+        return containerView
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let pokemon = dataManager.getPokemon(at: indexPath.row) {
-//            print(pokemon.name)
             selectedPokemon = pokemon
-            
             performSegue(withIdentifier: "sendPokemonMS", sender: self)
         }
     }
