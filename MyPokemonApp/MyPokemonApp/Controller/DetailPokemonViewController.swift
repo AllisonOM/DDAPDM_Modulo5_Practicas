@@ -13,6 +13,9 @@ class DetailPokemonViewController: UIViewController {
     @IBOutlet weak var imageGPokemon: UIImageView!
     @IBOutlet weak var moveGPokemon: UILabel!
     @IBOutlet weak var abilitiesGPokemon: UILabel!
+    @IBAction func btnClose(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     var getNamePokemon: String?
     var getImagePokemon: String?

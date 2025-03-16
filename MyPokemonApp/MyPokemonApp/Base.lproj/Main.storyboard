@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fS4-PF-ML5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Xu-87-rlk">
-                                <rect key="frame" x="20" y="103" width="390" height="795"/>
+                                <rect key="frame" x="20" y="59" width="390" height="839"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokemonCell" rowHeight="80" id="fdP-UF-Ij8" customClass="PokemonTableViewCell" customModule="MyPokemonApp" customModuleProvider="target">
@@ -77,17 +77,17 @@
                     <navigationItem key="navigationItem" title="Lista de pokemones" id="1G9-gw-NNf"/>
                     <connections>
                         <outlet property="pokemonTable" destination="7Xu-87-rlk" id="Qcw-A1-abu"/>
-                        <segue destination="8hH-RO-k7O" kind="show" identifier="sendPokemon" id="LZe-Zp-noU"/>
+                        <segue destination="8hH-RO-k7O" kind="presentation" identifier="sendPokemonMS" id="sFM-aV-ecw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915.8139534883721" y="-2.5751072961373391"/>
+            <point key="canvasLocation" x="1017.2093023255813" y="-2.5751072961373391"/>
         </scene>
         <!--Detalles del Pokemon-->
         <scene sceneID="FV4-wG-nzw">
             <objects>
-                <viewController id="8hH-RO-k7O" customClass="DetailPokemonViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8hH-RO-k7O" customClass="DetailPokemonViewController" customModule="MyPokemonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RPJ-hV-4fh">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +144,14 @@
                                 <color key="textColor" name="MyColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-fM-Lb0">
+                                <rect key="frame" x="20" y="20" width="72.333333333333329" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Cerrar"/>
+                                <connections>
+                                    <action selector="btnClose:" destination="8hH-RO-k7O" eventType="touchUpInside" id="0Vs-t4-Gzd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TSp-4W-9MS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -156,6 +164,8 @@
                             <constraint firstItem="9lt-rg-FUx" firstAttribute="centerY" secondItem="RPJ-hV-4fh" secondAttribute="centerY" constant="230" id="RvI-mc-ukG"/>
                             <constraint firstItem="FBN-7S-fxa" firstAttribute="centerY" secondItem="RPJ-hV-4fh" secondAttribute="centerY" constant="230" id="Uco-xQ-CLe"/>
                             <constraint firstItem="JNf-HD-Phr" firstAttribute="centerY" secondItem="RPJ-hV-4fh" secondAttribute="centerY" constant="-260" id="WDQ-8s-wYa"/>
+                            <constraint firstItem="JL5-fM-Lb0" firstAttribute="leading" secondItem="TSp-4W-9MS" secondAttribute="leading" constant="20" id="ddd-ne-tQp"/>
+                            <constraint firstItem="JL5-fM-Lb0" firstAttribute="top" secondItem="TSp-4W-9MS" secondAttribute="top" constant="20" id="eCB-UI-XMI"/>
                             <constraint firstItem="9lt-rg-FUx" firstAttribute="centerX" secondItem="RPJ-hV-4fh" secondAttribute="centerX" constant="70" id="hxr-N5-RSk"/>
                             <constraint firstItem="JNf-HD-Phr" firstAttribute="centerX" secondItem="RPJ-hV-4fh" secondAttribute="centerX" id="nDz-Sw-8J2"/>
                             <constraint firstItem="ubg-3f-gVL" firstAttribute="top" secondItem="JNf-HD-Phr" secondAttribute="bottom" constant="100" id="osz-fb-Zwj"/>
@@ -172,25 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6t1-1X-scg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2856.2790697674418" y="-2.5751072961373391"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7ra-Ph-JEm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fS4-PF-ML5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZvN-fZ-AoT">
-                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5mQ-1Z-N8s"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Npz-JJ-IwV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1010" y="-3"/>
+            <point key="canvasLocation" x="1957.6744186046512" y="-2.5751072961373391"/>
         </scene>
     </scenes>
     <resources>

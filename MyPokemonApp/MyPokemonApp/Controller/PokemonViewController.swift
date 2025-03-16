@@ -1,3 +1,10 @@
+//
+//  PokemonViewController.swift
+//  MyPokemonApp
+//
+//  Created by Allison on 07/03/25.
+//
+
 import UIKit
 
 class PokemonViewController: UIViewController {
@@ -41,11 +48,14 @@ extension PokemonViewController : UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Pokemones"
+    }
+    
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//            return UIImageView(image: UIImage(named: "PokemonHeader"))
+//        return UIImageView(image: UIImage(named: "PokemonHeader"))
 //    }
     
-    // Reemplaza este método para aplicar el efecto de desenfoque
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         // Crea un contenedor para el encabezado
@@ -83,16 +93,18 @@ extension PokemonViewController : UITableViewDataSource, UITableViewDelegate {
         
         return containerView
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let pokemon = dataManager.getPokemon(at: indexPath.row) {
+//            print(pokemon.name)
             selectedPokemon = pokemon
-            performSegue(withIdentifier: "sendPokemon", sender: self)
+            
+            performSegue(withIdentifier: "sendPokemonMS", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sendPokemon" {
+        if segue.identifier == "sendPokemonMS" {
             let objDestination = segue.destination as! DetailPokemonViewController
             
             if let selectedPokemon = selectedPokemon {

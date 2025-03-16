@@ -10,7 +10,7 @@
 "menu.option.videogames" = "Videojuego";
 "menu.option.weapons" = "Armas";
 "menu.option.characters" = "Personajes";
-"menu.option.merchandise" = "Mercancía";
+"menu.option.merchandise" = "Mercancia";
 
 /* WEAPONS */
 "weapon.name.boomshot" = "Lanzagranadas Boomshot";
