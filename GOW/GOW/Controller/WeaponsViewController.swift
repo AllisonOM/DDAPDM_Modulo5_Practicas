@@ -84,18 +84,17 @@ class WeaponsViewController: UIViewController {
         if tabItemTag == Constants.tagCGO {
             arrayWeapons = cgoWeapons
         }
-        else {
+        else if tabItemTag == Constants.tagLocus {
             arrayWeapons = locusWeapons
         }
     }
 }
 
 extension WeaponsViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayWeapons.count
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WeaponsCell
