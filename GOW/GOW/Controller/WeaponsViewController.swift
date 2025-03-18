@@ -10,6 +10,7 @@ import UIKit
 class WeaponsViewController: UIViewController {
 
     @IBOutlet weak var wTableView: UITableView!
+    @IBOutlet weak var titleView: UILabel!
     
     // Data Source
     var arrayWeapons : [Weapon] = []
@@ -83,9 +84,11 @@ class WeaponsViewController: UIViewController {
         let tabItemTag = self.tabBarItem.tag
         if tabItemTag == Constants.tagCGO {
             arrayWeapons = cgoWeapons
+            titleView.text = "CGO"
         }
         else if tabItemTag == Constants.tagLocus {
             arrayWeapons = locusWeapons
+            titleView.text = "Locus"
         }
     }
 }
